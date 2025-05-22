@@ -26,7 +26,7 @@
 
 ## 📥 Instalasi
 
-Pastikan Python (disarankan versi 3.8+) sudah terpasang di sistem kamu.
+Pastikan Python (disarankan versi 3.8+) sudah terpasang.
 
 Instal dependensi:
 
